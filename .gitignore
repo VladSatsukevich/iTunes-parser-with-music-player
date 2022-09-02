@@ -1,0 +1,12 @@
+.DS_Store
+
+# Xcode personal settings
+xcuserdata/
+
+# Cocoapods
+Pods/
+
+# Build Artifacts
+build/
+.build/
+DerivedData/
