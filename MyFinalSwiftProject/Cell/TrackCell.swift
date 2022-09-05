@@ -48,7 +48,11 @@ class TrackCell: UITableViewCell {
         fetchRequest.predicate = NSPredicate(format: "trackName = %@ AND artistName = %@", cell!.trackName, cell!.artistName)
         let count = try? context.count(for: fetchRequest)
         do {
-            if count! > 0 {
+            if count! == 0 {
+                addFavoriteTrack()
+                print("\(cell!.trackName), \(cell!.artistName) was added")
+                addButtonOutlet.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            } else {
                 let objects = try context.fetch(fetchRequest)
                 for object in objects {
                     context.delete(object)
@@ -56,10 +60,6 @@ class TrackCell: UITableViewCell {
                 try context.save()
                 print("\(cell!.trackName), \(cell!.artistName) was removed")
                 addButtonOutlet.setImage(UIImage(systemName: "heart"), for: .normal)
-            } else {
-                addFavoriteTrack()
-                print("\(cell!.trackName), \(cell!.artistName) was added")
-                addButtonOutlet.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             }
         } catch let error as NSError {
             print("Could not fetch. \(error)")
