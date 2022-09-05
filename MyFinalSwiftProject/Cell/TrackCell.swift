@@ -45,12 +45,12 @@ class TrackCell: UITableViewCell {
     }
     
     private func checkTrack() {
-        fetchRequest.predicate = NSPredicate(format: "trackName = %@ AND artistName = %@", cell!.trackName, cell!.artistName)
+        fetchRequest.predicate = NSPredicate(format: "trackName = %@ AND artistName = %@ AND collectionName = %@", cell!.trackName, cell!.artistName, cell!.collectionName)
         let count = try? context.count(for: fetchRequest)
         do {
             if count! == 0 {
                 addFavoriteTrack()
-                print("\(cell!.trackName), \(cell!.artistName) was added")
+                print("\(cell!.trackName), \(cell!.artistName), \(cell!.collectionName) was added")
                 addButtonOutlet.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             } else {
                 let objects = try context.fetch(fetchRequest)
@@ -58,7 +58,7 @@ class TrackCell: UITableViewCell {
                     context.delete(object)
                 }
                 try context.save()
-                print("\(cell!.trackName), \(cell!.artistName) was removed")
+                print("\(cell!.trackName), \(cell!.artistName), \(cell!.collectionName) was removed")
                 addButtonOutlet.setImage(UIImage(systemName: "heart"), for: .normal)
             }
         } catch let error as NSError {
@@ -69,7 +69,7 @@ class TrackCell: UITableViewCell {
     
     func setup(viewModel: SearchViewModel.Cell?){
         self.cell = viewModel
-        fetchRequest.predicate = NSPredicate(format: "trackName = %@ AND artistName = %@", cell!.trackName, cell!.artistName)
+        fetchRequest.predicate = NSPredicate(format: "trackName = %@ AND artistName = %@ AND collectionName = %@", cell!.trackName, cell!.artistName, cell!.collectionName)
         let count = try? context.count(for: fetchRequest)
         if count! > 0 {
             addButtonOutlet.setImage(UIImage(systemName: "heart.fill"), for: .normal)
