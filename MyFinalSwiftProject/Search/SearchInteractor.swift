@@ -22,7 +22,6 @@ class SearchInteractor: SearchBusinessLogic {
     if service == nil {
       service = SearchService()
     }
-      
       switch request {
       case .some:
          // print("interactor .some")

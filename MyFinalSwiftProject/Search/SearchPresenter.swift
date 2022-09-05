@@ -16,7 +16,6 @@ class SearchPresenter: SearchPresentationLogic {
   weak var viewController: SearchDisplayLogic?
   
   func presentData(response: Search.Model.Response.ResponseType) {
-  
       switch response {
       case .some:
           print("presenter .some")

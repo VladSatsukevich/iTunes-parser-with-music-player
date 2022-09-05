@@ -151,11 +151,11 @@
 		53961C64289B8C980091B7A7 /* MyFinalSwiftProject */ = {
 			isa = PBXGroup;
 			children = (
-				53553AC128C2157E003B37B3 /* Core Data */,
 				53553ABC28C21577003B37B3 /* Cell */,
+				53553AC128C2157E003B37B3 /* Core Data */,
 				53553AB728C2156D003B37B3 /* FavoriteTracks */,
-				53553AA028C21533003B37B3 /* Models */,
 				53553AA528C2153E003B37B3 /* Network */,
+				53553AA028C21533003B37B3 /* Models */,
 				53553AA828C2155D003B37B3 /* Search */,
 				53961C65289B8C980091B7A7 /* AppDelegate.swift */,
 				53961C67289B8C980091B7A7 /* SceneDelegate.swift */,

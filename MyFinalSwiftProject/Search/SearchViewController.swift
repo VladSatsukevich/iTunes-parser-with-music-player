@@ -16,18 +16,17 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     
     var interactor: SearchBusinessLogic?
     var router: (NSObjectProtocol & SearchRoutingLogic)?
-    @IBOutlet weak var tableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
     private var searchViewModel = SearchViewModel.init(cells: [])
     let network = Network()
     private var timer: Timer?
-    
+    @IBOutlet weak var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableSetup()
         setupSearchBar()
         setup()
-        
     }
     
     private func setup() {
@@ -60,7 +59,6 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     }
     
     func displayData(viewModel: Search.Model.ViewModel.ViewModelData) {
-    
         switch viewModel {
         case .some:
             print("viewController .some")

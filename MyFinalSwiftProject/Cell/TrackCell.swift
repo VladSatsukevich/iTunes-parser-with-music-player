@@ -18,42 +18,64 @@ protocol TrackCellViewModel {
 class TrackCell: UITableViewCell {
     
     let context: NSManagedObjectContext = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
+    let fetchRequest: NSFetchRequest = FavoriteTrack.fetchRequest()
     static let reuseId = "TrackCell"
+    var cell: SearchViewModel.Cell?
     @IBOutlet weak var trackNameLabel: UILabel!
     @IBOutlet weak var collectionLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var trackImageView: UIImageView!
     @IBOutlet weak var addButtonOutlet: UIButton!
-    var cell: SearchViewModel.Cell?
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     @IBAction func addButton(_ sender: Any) {
-        addTrack()
+        checkTrack()
     }
-
-    private func addTrack() {
-        
+    
+    private func addFavoriteTrack() {
         let favoriteTrack = FavoriteTrack(context: self.context)
         favoriteTrack.trackName = cell?.trackName
         favoriteTrack.artistName = cell?.artistName
         favoriteTrack.collectionName = cell?.collectionName
         favoriteTrack.image = cell?.trackLogo
         favoriteTrack.previewUrl = cell?.previewURL
+    }
+    
+    private func checkTrack() {
+        fetchRequest.predicate = NSPredicate(format: "trackName = %@ AND artistName = %@", cell!.trackName, cell!.artistName)
+        let count = try? context.count(for: fetchRequest)
         do {
-            context.insert(favoriteTrack)
-            print("\(favoriteTrack.trackName!), \(favoriteTrack.artistName!) was edded to Core Data")
-            try context.save()
-        } catch {
-            context.rollback()
-            fatalError()
+            if count! > 0 {
+                let objects = try context.fetch(fetchRequest)
+                for object in objects {
+                    context.delete(object)
+                }
+                try context.save()
+                print("\(cell!.trackName), \(cell!.artistName) was removed")
+                addButtonOutlet.setImage(UIImage(systemName: "heart"), for: .normal)
+            } else {
+                addFavoriteTrack()
+                print("\(cell!.trackName), \(cell!.artistName) was added")
+                addButtonOutlet.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error)")
+            return
         }
     }
     
     func setup(viewModel: SearchViewModel.Cell?){
         self.cell = viewModel
+        fetchRequest.predicate = NSPredicate(format: "trackName = %@ AND artistName = %@", cell!.trackName, cell!.artistName)
+        let count = try? context.count(for: fetchRequest)
+        if count! > 0 {
+            addButtonOutlet.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        } else {
+            addButtonOutlet.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
         trackNameLabel?.text = viewModel?.trackName
         artistLabel?.text = viewModel?.artistName
         collectionLabel?.text = viewModel?.collectionName
