@@ -15,7 +15,7 @@ protocol TrackCellViewModel {
     var trackLogo: String { get }
 }
 
-class TrackCell: UITableViewCell {
+final class TrackCell: UITableViewCell {
     
     let context: NSManagedObjectContext = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
     let fetchRequest: NSFetchRequest = FavoriteTrack.fetchRequest()

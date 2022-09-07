@@ -12,7 +12,7 @@ protocol SearchPresentationLogic {
   func presentData(response: Search.Model.Response.ResponseType)
 }
 
-class SearchPresenter: SearchPresentationLogic {
+final class SearchPresenter: SearchPresentationLogic {
   weak var viewController: SearchDisplayLogic?
   
   func presentData(response: Search.Model.Response.ResponseType) {

@@ -8,7 +8,7 @@ import CoreData
 import Kingfisher
 import UIKit
 
-class FavoriteTracksViewController: UIViewController {
+final class FavoriteTracksViewController: UIViewController {
     
     let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
     private var models = [FavoriteTrack]()

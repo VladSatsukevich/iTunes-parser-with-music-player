@@ -12,7 +12,7 @@ protocol SearchDisplayLogic: AnyObject {
     func displayData(viewModel: Search.Model.ViewModel.ViewModelData)
 }
 
-class SearchViewController: UIViewController, SearchDisplayLogic {
+final class SearchViewController: UIViewController, SearchDisplayLogic {
     
     var interactor: SearchBusinessLogic?
     var router: (NSObjectProtocol & SearchRoutingLogic)?
@@ -27,6 +27,12 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         tableSetup()
         setupSearchBar()
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Updating favoriteTable after tabbar
+        tableView.reloadData()
     }
     
     private func setup() {

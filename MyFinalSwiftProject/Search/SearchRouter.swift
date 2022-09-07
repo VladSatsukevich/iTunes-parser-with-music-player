@@ -12,7 +12,7 @@ protocol SearchRoutingLogic {
 
 }
 
-class SearchRouter: NSObject, SearchRoutingLogic {
+final class SearchRouter: NSObject, SearchRoutingLogic {
 
   weak var viewController: SearchViewController?
   // MARK: Routing

@@ -16,6 +16,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" systemColor="systemRedColor"/>
+                        <tabBarAppearance key="standardAppearance"/>
                     </tabBar>
                     <connections>
                         <segue destination="Z6F-qE-Kqz" kind="relationship" relationship="viewControllers" id="pkf-RZ-ykO"/>
@@ -26,11 +27,11 @@
             </objects>
             <point key="canvasLocation" x="155" y="-77"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Favorite-->
         <scene sceneID="rHo-di-fTq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z6F-qE-Kqz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="heart.fill" catalog="system" id="DGG-GH-5G1"/>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="heart.fill" catalog="system" id="DGG-GH-5G1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yNg-fw-lEd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -65,11 +66,11 @@
             </objects>
             <point key="canvasLocation" x="1833" y="282"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="hrz-gN-7yr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gck-1y-Of7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="gLk-4i-bzi"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="gLk-4i-bzi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zkO-NH-MC1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
