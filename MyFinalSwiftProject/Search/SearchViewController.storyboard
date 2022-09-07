@@ -39,6 +39,14 @@
             </objects>
             <point key="canvasLocation" x="428" y="-492"/>
         </scene>
+        <!--MusicPlayer-->
+        <scene sceneID="UoX-QT-SHl">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MusicPlayer" storyboardName="MusicPlayerController" referencedIdentifier="MusicPlayer" id="cmZ-d1-RxA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fdy-K2-fRX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="912" y="-492"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

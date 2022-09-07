@@ -5,8 +5,8 @@
 //  Created by VironIT on 31.08.22.
 //
 
-import Foundation
 import AVKit
+import Foundation
 
 extension CMTime {
     func timeDisplay() -> String {

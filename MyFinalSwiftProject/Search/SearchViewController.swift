@@ -16,6 +16,7 @@ final class SearchViewController: UIViewController, SearchDisplayLogic {
     
     var interactor: SearchBusinessLogic?
     var router: (NSObjectProtocol & SearchRoutingLogic)?
+    
     let searchController = UISearchController(searchResultsController: nil)
     private var searchViewModel = SearchViewModel.init(cells: [])
     let network = Network()
@@ -25,7 +26,7 @@ final class SearchViewController: UIViewController, SearchDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableSetup()
-        setupSearchBar()
+        searchBarSetup()
         setup()
     }
     
@@ -47,7 +48,7 @@ final class SearchViewController: UIViewController, SearchDisplayLogic {
         router.viewController     = viewController
     }
     
-    private func setupSearchBar(){
+    private func searchBarSetup(){
         navigationItem.searchController = searchController
         searchController.searchBar.delegate = self
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -75,6 +76,8 @@ final class SearchViewController: UIViewController, SearchDisplayLogic {
     }
 }
 
+// MARK: - Table settings
+
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,10 +87,20 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrackCell", for: indexPath) as? TrackCell
         let cellViewModel = searchViewModel.cells[indexPath.row]
-        cell?.setup(viewModel: cellViewModel)
+        cell?.parsingSetup(viewModel: cellViewModel)
         return cell!
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellViewModel = searchViewModel.cells[indexPath.row]
+        let vc = storyboard?.instantiateViewController(withIdentifier: "MusicPlayer") as? MusicPlayerViewController
+        vc?.musicSetup(viewModel: cellViewModel)
+        vc?.delegate = self //moveBack-Forward buttons delegate
+        present(vc!, animated: true, completion: nil)
+    }
 }
+
+// MARK: - Search Bar Delegate
     
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -95,5 +108,36 @@ extension SearchViewController: UISearchBarDelegate {
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
             self.interactor?.makeRequest(request: Search.Model.Request.RequestType.getTracks(searchTest: searchText))
         })
+    }
+}
+
+// MARK: - Player next/forward button settings
+
+extension SearchViewController: AVPlayerViewControllerDelegate {
+    
+    private func getTrack(isForwardTrack: Bool) -> SearchViewModel.Cell? {
+        guard let indexPath = tableView.indexPathForSelectedRow else { return nil}
+        tableView.deselectRow(at: indexPath, animated: true)
+        var nextIndexPath: IndexPath!
+        if isForwardTrack {
+            nextIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+            if nextIndexPath.row == searchViewModel.cells.count {
+                nextIndexPath.row = 0
+            }
+        } else {
+            nextIndexPath = IndexPath(row: indexPath.row - 1, section: indexPath.section)
+            if nextIndexPath.row == -1 {
+                nextIndexPath.row = searchViewModel.cells.count - 1
+            }
+        }
+        tableView.selectRow(at: nextIndexPath, animated: true, scrollPosition: .none)
+        let cellViewModel = searchViewModel.cells[nextIndexPath.row]
+        return cellViewModel
+    }
+    func moveBack() -> SearchViewModel.Cell? {
+        return getTrack(isForwardTrack: false)
+    }
+    func moveForward() -> SearchViewModel.Cell? {
+        return getTrack(isForwardTrack: true)
     }
 }

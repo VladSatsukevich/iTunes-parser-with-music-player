@@ -70,7 +70,7 @@ final class TrackCell: UITableViewCell {
         }
     }
     
-    func setup(viewModel: SearchViewModel.Cell?){
+    func parsingSetup(viewModel: SearchViewModel.Cell?){
         self.cell = viewModel
         fetchRequest.predicate = NSPredicate(format: "trackName = %@ AND artistName = %@ AND collectionName = %@",
                                              argumentArray: [cell!.trackName,

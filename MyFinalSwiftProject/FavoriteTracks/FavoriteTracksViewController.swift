@@ -28,7 +28,7 @@ final class FavoriteTracksViewController: UIViewController {
         getModels()
     }
     
-    // MARK: - Get models from Core Data
+// MARK: - Get models from Core Data
     
     private func getModels() {
         do {
@@ -45,6 +45,8 @@ final class FavoriteTracksViewController: UIViewController {
             fatalError()
         }
     }
+    
+// MARK: - Table Setup
     
     private func tableSetup() {
         favoriteTable.delegate = self
@@ -70,6 +72,16 @@ extension FavoriteTracksViewController: UITableViewDelegate, UITableViewDataSour
         return favoriteCell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = models[indexPath.row]
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "FavoriteMusicPlayer") as? FavoriteTracksPlayerViewController else {
+            return
+        }
+        vc.playerSetup(viewModel: model)
+        vc.favoriteDelegate = self
+        present(vc, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
@@ -83,5 +95,36 @@ extension FavoriteTracksViewController: UITableViewDelegate, UITableViewDataSour
             favoriteTable.deleteRows(at: [indexPath], with: .fade)
             favoriteTable.endUpdates()
         }
+    }
+}
+
+// MARK: - Player next/forward button settings
+
+extension FavoriteTracksViewController: FavoritePlayerViewControllerDelegate {
+    
+    private func getTrack(isForwardTrack: Bool) -> FavoriteTrack? {
+        guard let indexPath = favoriteTable.indexPathForSelectedRow else { return nil}
+        favoriteTable.deselectRow(at: indexPath, animated: true)
+        var nextIndexPath: IndexPath!
+        if isForwardTrack {
+            nextIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+            if nextIndexPath.row == models.count {
+                nextIndexPath.row = 0
+            }
+        } else {
+            nextIndexPath = IndexPath(row: indexPath.row - 1, section: indexPath.section)
+            if nextIndexPath.row == -1 {
+                nextIndexPath.row = models.count - 1
+            }
+        }
+        favoriteTable.selectRow(at: nextIndexPath, animated: true, scrollPosition: .none)
+        let model = models[nextIndexPath.row]
+        return model
+    }
+    func moveBack() -> FavoriteTrack? {
+        return getTrack(isForwardTrack: false)
+    }
+    func moveForward() -> FavoriteTrack? {
+        return getTrack(isForwardTrack: true)
     }
 }

@@ -49,6 +49,16 @@
             </objects>
             <point key="canvasLocation" x="1843.4782608695652" y="154.6875"/>
         </scene>
+        <!--FavoriteMusicPlayer-->
+        <scene sceneID="BPY-z1-yN5">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="FavoriteMusicPlayer" storyboardName="FavoriteTracksPlayerController" referencedIdentifier="FavoriteMusicPlayer" id="YTN-6x-aI0" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="aId-GB-dGa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DCl-cc-HX7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2325" y="155"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

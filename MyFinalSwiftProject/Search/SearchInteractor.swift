@@ -24,10 +24,8 @@ final class SearchInteractor: SearchBusinessLogic {
     }
       switch request {
       case .some:
-         // print("interactor .some")
           presenter?.presentData(response: Search.Model.Response.ResponseType.some)
       case .getTracks(let searchText):
-         // print("interactor .getTracks")
           network.makeRequest(searchText: searchText) { [weak self] (searchResponse) in
               self?.presenter?.presentData(response: Search.Model.Response.ResponseType.presentTracks(searchResponse: searchResponse))
           }
