@@ -7,8 +7,8 @@ target 'MyFinalSwiftProject' do
 
   # Pods for MyFinalSwiftProject
 
-  pod 'Alamofire'
+
+	pod 'Alamofire'
 	pod 'Kingfisher'
 	pod 'SDWebImage'
-
 end
