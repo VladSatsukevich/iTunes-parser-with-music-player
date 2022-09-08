@@ -1,6 +1,6 @@
 //
 //  FavoriteTracksViewController.swift
-//  FavoriteTracks
+//  iTunes
 //
 //  Created by VironIT on 29.08.22.
 //
@@ -37,7 +37,7 @@ final class FavoriteTracksViewController: UIViewController {
             let sortDescriptors = [sectionSortDescriptor]
             fetchRequest.sortDescriptors = sortDescriptors
             try models = context.fetch(fetchRequest)
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [unowned self] in
                 self.favoriteTable.reloadData()
             }
             try context.save()

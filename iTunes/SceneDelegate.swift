@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  MyFinalSwiftProject
+//  iTunes
 //
 //  Created by VironIT on 4.08.22.
 //

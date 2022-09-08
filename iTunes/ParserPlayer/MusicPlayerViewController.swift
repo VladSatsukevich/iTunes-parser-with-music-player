@@ -1,6 +1,6 @@
 //
 //  MusicPlayerViewController.swift
-//  iTunesSwiftParser
+//  iTunes
 //
 //  Created by VironIT on 26.08.22.
 //
@@ -8,12 +8,12 @@ import AVKit
 import SDWebImage
 import UIKit
 
-protocol FavoritePlayerViewControllerDelegate: AnyObject {
-    func moveBack() -> FavoriteTrack?
-    func moveForward() -> FavoriteTrack?
+protocol AVPlayerViewControllerDelegate: AnyObject {
+    func moveBack() -> SearchViewModel.Cell?
+    func moveForward() -> SearchViewModel.Cell?
 }
 
-class FavoriteTracksPlayerViewController: UIViewController {
+class MusicPlayerViewController: UIViewController {
     
     @IBOutlet weak var trackImageView: UIImageView!
     @IBOutlet weak var currentTimeSlider: UISlider!
@@ -30,22 +30,25 @@ class FavoriteTracksPlayerViewController: UIViewController {
         return avPlayer
     }()
     
-    var model: FavoriteTrack?
-    var favoriteDelegate: FavoritePlayerViewControllerDelegate? //back-forward buttons delegate
+    var cell: SearchViewModel.Cell?
+    
+    weak var delegate: AVPlayerViewControllerDelegate? //back-forward buttons delegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playerSetup(viewModel: model!)
+        musicSetup(viewModel: cell!)
     }
     
-    func playerSetup(viewModel: FavoriteTrack){
-        self.model = viewModel
+    // MARK: - Music Player Setup
+    
+    func musicSetup(viewModel: SearchViewModel.Cell){
+        self.cell = viewModel
         trackTitleLabel?.text = viewModel.trackName
         artistTitleLabel?.text = viewModel.artistName
-        playTrack(previewUrl: viewModel.previewUrl)
+        playTrack(previewUrl: viewModel.previewURL)
         monitorTime()
         observeCurrentTime()
-        let imageResize = viewModel.image!.replacingOccurrences(of: "100x100", with: "300x300")
+        let imageResize = viewModel.trackLogo.replacingOccurrences(of: "100x100", with: "300x300")
         guard let url = URL(string: imageResize) else { return }
         trackImageView?.sd_setImage(with: url, completed: nil)
     }
@@ -63,11 +66,11 @@ class FavoriteTracksPlayerViewController: UIViewController {
     // MARK: - Player moving forward after track ending
     
     @objc private func trackDidEnded() {
-        let model = favoriteDelegate?.moveForward()
-        guard let buttonInfo = model else {
+        let cellViewModel = delegate?.moveForward()
+        guard let buttonInfo = cellViewModel else {
             return
         }
-        self.playerSetup(viewModel: buttonInfo)
+        self.musicSetup(viewModel: buttonInfo)
     }
     
     // MARK: - Time setup
@@ -116,11 +119,11 @@ class FavoriteTracksPlayerViewController: UIViewController {
     // MARK: - Buttons setup
     
     @IBAction func previousTrack(_ sender: Any) {
-        let model = favoriteDelegate?.moveBack()
-        guard let buttonInfo = model else {
+        let cellViewModel = delegate?.moveBack()
+        guard let buttonInfo = cellViewModel else {
             return
         }
-        self.playerSetup(viewModel: buttonInfo)
+        self.musicSetup(viewModel: buttonInfo)
     }
     
     @IBAction func nextTrack(_ sender: Any) {

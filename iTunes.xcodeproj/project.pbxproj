@@ -58,16 +58,16 @@
 		53553AC228C2157E003B37B3 /* FavoriteTracks+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FavoriteTracks+CoreDataClass.swift"; sourceTree = "<group>"; };
 		53553AC328C2157E003B37B3 /* FavoriteTracks+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FavoriteTracks+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		53553ACA28C2170B003B37B3 /* FavoriteTracks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteTracks.xcdatamodel; sourceTree = "<group>"; };
-		53961C62289B8C980091B7A7 /* MyFinalSwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFinalSwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53961C62289B8C980091B7A7 /* iTunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53961C65289B8C980091B7A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53961C67289B8C980091B7A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		53961C6C289B8C980091B7A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		53961C6E289B8C990091B7A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53961C73289B8C990091B7A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53C9954028C72D3C001C192C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		56265242F4C2269A3735B9B7 /* Pods-MyFinalSwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFinalSwiftProject.release.xcconfig"; path = "Target Support Files/Pods-MyFinalSwiftProject/Pods-MyFinalSwiftProject.release.xcconfig"; sourceTree = "<group>"; };
+		B0FDFB9235F8F3386611DE6D /* Pods-MyFinalSwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFinalSwiftProject.debug.xcconfig"; path = "Target Support Files/Pods-MyFinalSwiftProject/Pods-MyFinalSwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 		B52642ACAEDC736B88C69F12 /* Pods_MyFinalSwiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFinalSwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B912EACEE6CE817D4F30016D /* Pods-MyFinalSwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFinalSwiftProject.debug.xcconfig"; path = "Target Support Files/Pods-MyFinalSwiftProject/Pods-MyFinalSwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
-		FF8696064AC6EAF80200F8E1 /* Pods-MyFinalSwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFinalSwiftProject.release.xcconfig"; path = "Target Support Files/Pods-MyFinalSwiftProject/Pods-MyFinalSwiftProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,22 +161,22 @@
 		53961C59289B8C970091B7A7 = {
 			isa = PBXGroup;
 			children = (
-				53961C64289B8C980091B7A7 /* MyFinalSwiftProject */,
+				53961C64289B8C980091B7A7 /* iTunes */,
 				53961C63289B8C980091B7A7 /* Products */,
-				FC30C57A42DCBF450BEB231B /* Pods */,
 				B8D7BD9A84E09966D76F98A3 /* Frameworks */,
+				5FA303C835C4A1FBA6EF55E3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		53961C63289B8C980091B7A7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				53961C62289B8C980091B7A7 /* MyFinalSwiftProject.app */,
+				53961C62289B8C980091B7A7 /* iTunes.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		53961C64289B8C980091B7A7 /* MyFinalSwiftProject */ = {
+		53961C64289B8C980091B7A7 /* iTunes */ = {
 			isa = PBXGroup;
 			children = (
 				53553AA528C2153E003B37B3 /* Alamofire */,
@@ -195,7 +195,16 @@
 				53961C6E289B8C990091B7A7 /* Assets.xcassets */,
 				53961C73289B8C990091B7A7 /* Info.plist */,
 			);
-			path = MyFinalSwiftProject;
+			path = iTunes;
+			sourceTree = "<group>";
+		};
+		5FA303C835C4A1FBA6EF55E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B0FDFB9235F8F3386611DE6D /* Pods-MyFinalSwiftProject.debug.xcconfig */,
+				56265242F4C2269A3735B9B7 /* Pods-MyFinalSwiftProject.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		B8D7BD9A84E09966D76F98A3 /* Frameworks */ = {
@@ -206,21 +215,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FC30C57A42DCBF450BEB231B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B912EACEE6CE817D4F30016D /* Pods-MyFinalSwiftProject.debug.xcconfig */,
-				FF8696064AC6EAF80200F8E1 /* Pods-MyFinalSwiftProject.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		53961C61289B8C980091B7A7 /* MyFinalSwiftProject */ = {
+		53961C61289B8C980091B7A7 /* iTunes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 53961C76289B8C990091B7A7 /* Build configuration list for PBXNativeTarget "MyFinalSwiftProject" */;
+			buildConfigurationList = 53961C76289B8C990091B7A7 /* Build configuration list for PBXNativeTarget "iTunes" */;
 			buildPhases = (
 				816CE2854FE411E6A7E912BD /* [CP] Check Pods Manifest.lock */,
 				53961C5E289B8C980091B7A7 /* Sources */,
@@ -232,9 +232,9 @@
 			);
 			dependencies = (
 			);
-			name = MyFinalSwiftProject;
+			name = iTunes;
 			productName = MyFinalSwiftProject;
-			productReference = 53961C62289B8C980091B7A7 /* MyFinalSwiftProject.app */;
+			productReference = 53961C62289B8C980091B7A7 /* iTunes.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -252,7 +252,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 53961C5D289B8C970091B7A7 /* Build configuration list for PBXProject "MyFinalSwiftProject" */;
+			buildConfigurationList = 53961C5D289B8C970091B7A7 /* Build configuration list for PBXProject "iTunes" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -265,7 +265,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				53961C61289B8C980091B7A7 /* MyFinalSwiftProject */,
+				53961C61289B8C980091B7A7 /* iTunes */,
 			);
 		};
 /* End PBXProject section */
@@ -486,7 +486,7 @@
 		};
 		53961C77289B8C990091B7A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B912EACEE6CE817D4F30016D /* Pods-MyFinalSwiftProject.debug.xcconfig */;
+			baseConfigurationReference = B0FDFB9235F8F3386611DE6D /* Pods-MyFinalSwiftProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -494,11 +494,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LA7JHQGX5M;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyFinalSwiftProject/Info.plist;
+				INFOPLIST_FILE = iTunes/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iTunes;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -516,7 +517,7 @@
 		};
 		53961C78289B8C990091B7A7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF8696064AC6EAF80200F8E1 /* Pods-MyFinalSwiftProject.release.xcconfig */;
+			baseConfigurationReference = 56265242F4C2269A3735B9B7 /* Pods-MyFinalSwiftProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -524,11 +525,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LA7JHQGX5M;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyFinalSwiftProject/Info.plist;
+				INFOPLIST_FILE = iTunes/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iTunes;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -547,7 +549,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		53961C5D289B8C970091B7A7 /* Build configuration list for PBXProject "MyFinalSwiftProject" */ = {
+		53961C5D289B8C970091B7A7 /* Build configuration list for PBXProject "iTunes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				53961C74289B8C990091B7A7 /* Debug */,
@@ -556,7 +558,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		53961C76289B8C990091B7A7 /* Build configuration list for PBXNativeTarget "MyFinalSwiftProject" */ = {
+		53961C76289B8C990091B7A7 /* Build configuration list for PBXNativeTarget "iTunes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				53961C77289B8C990091B7A7 /* Debug */,

@@ -1,6 +1,6 @@
 //
 //  SearchViewController.swift
-//  MyFinalSwiftProject
+//  iTunes
 //
 //  Created by VironIT on 24.08.22.
 //

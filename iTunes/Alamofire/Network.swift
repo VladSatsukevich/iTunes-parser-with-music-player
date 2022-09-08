@@ -1,6 +1,6 @@
 //
 //  Network.swift
-//  MyFinalSwiftProject
+//  iTunes
 //
 //  Created by VironIT on 18.08.22.
 //
