@@ -19,76 +19,38 @@
                         <tabBarAppearance key="standardAppearance"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Z6F-qE-Kqz" kind="relationship" relationship="viewControllers" id="pkf-RZ-ykO"/>
-                        <segue destination="Gck-1y-Of7" kind="relationship" relationship="viewControllers" id="j0b-nq-3yc"/>
+                        <segue destination="ASi-Yp-EoG" kind="relationship" relationship="viewControllers" id="1Ir-0f-Vb8"/>
+                        <segue destination="Nvt-Y6-8qK" kind="relationship" relationship="viewControllers" id="3js-dc-t67"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljt-Lt-DCZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="155" y="-77"/>
         </scene>
-        <!--Favorite-->
-        <scene sceneID="rHo-di-fTq">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z6F-qE-Kqz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorite" image="heart.fill" catalog="system" id="DGG-GH-5G1"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yNg-fw-lEd">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ASi-Yp-EoG" kind="relationship" relationship="rootViewController" id="7Nj-3c-77f"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Tp-BX-vxB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1048" y="-357"/>
-        </scene>
         <!--FavoriteTracksViewController-->
         <scene sceneID="XhO-ag-HW8">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="FavoriteTracksViewController" storyboardName="FavoriteTracksViewController" referencedIdentifier="FavoriteTracksViewController" id="ASi-Yp-EoG" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="FavoriteTracksViewController" id="ASi-Yp-EoG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="vu0-DJ-Rif"/>
                     <navigationItem key="navigationItem" id="T3t-4C-0q0"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="klV-fo-v35" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1865" y="-358"/>
+            <point key="canvasLocation" x="-67" y="366"/>
         </scene>
         <!--SearchViewController-->
         <scene sceneID="8nd-p7-Hs8">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SearchViewController" storyboardName="SearchViewController" referencedIdentifier="SearchViewController" id="Nvt-Y6-8qK" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SearchViewController" id="Nvt-Y6-8qK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Wyh-TE-E42"/>
                     <navigationItem key="navigationItem" id="8wX-dC-2T0"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJq-oG-1OF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1833" y="282"/>
-        </scene>
-        <!--Search-->
-        <scene sceneID="hrz-gN-7yr">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gck-1y-Of7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="gLk-4i-bzi"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zkO-NH-MC1">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Nvt-Y6-8qK" kind="relationship" relationship="rootViewController" id="tlf-x9-9RB"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mvh-cH-d4y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="281.91964285714283"/>
+            <point key="canvasLocation" x="390" y="366"/>
         </scene>
     </scenes>
     <resources>
-        <image name="heart.fill" catalog="system" width="128" height="109"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

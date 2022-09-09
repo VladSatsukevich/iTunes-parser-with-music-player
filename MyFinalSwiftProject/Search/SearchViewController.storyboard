@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tnu-0Q-gYZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="grZ-bU-Xnf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -37,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UG0-aH-FdD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="428" y="-492"/>
+            <point key="canvasLocation" x="1337.68115942029" y="-492.1875"/>
         </scene>
         <!--MusicPlayer-->
         <scene sceneID="UoX-QT-SHl">
@@ -45,10 +45,31 @@
                 <viewControllerPlaceholder storyboardIdentifier="MusicPlayer" storyboardName="MusicPlayerController" referencedIdentifier="MusicPlayer" id="cmZ-d1-RxA" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fdy-K2-fRX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="912" y="-492"/>
+            <point key="canvasLocation" x="1821.7391304347827" y="-492.1875"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="J5m-cr-lBU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tnu-0Q-gYZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="sJT-sB-lXs"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IcB-Cu-yh0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9wc-bu-At2" kind="relationship" relationship="rootViewController" id="Wj0-WP-Eup"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ML5-UG-icx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="427.536231884058" y="-492.1875"/>
         </scene>
     </scenes>
     <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
