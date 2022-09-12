@@ -58,6 +58,7 @@ class MusicPlayerViewController: UIViewController {
     private func playTrack(previewUrl: String?) {
         guard let url = URL(string: previewUrl ?? "") else { return }
         let playerItem = AVPlayerItem(url: url)
+        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
         NotificationCenter.default.addObserver(self, selector: #selector(trackDidEnded), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
         player.replaceCurrentItem(with: playerItem)
         player.play()
