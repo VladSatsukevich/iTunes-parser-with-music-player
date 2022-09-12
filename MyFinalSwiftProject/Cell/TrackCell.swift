@@ -42,6 +42,16 @@ final class TrackCell: UITableViewCell {
         favoriteTrack.collectionName = cell?.collectionName
         favoriteTrack.image = cell?.trackLogo
         favoriteTrack.previewUrl = cell?.previewURL
+        if context.hasChanges {
+            do {
+                context.insert(favoriteTrack)
+                try context.save()
+                print("\(cell!.trackName), \(cell!.artistName), \(cell!.collectionName) was added")
+            } catch {
+                context.rollback()
+                fatalError()
+            }
+        }
     }
     
     private func checkTrack() {
@@ -53,7 +63,6 @@ final class TrackCell: UITableViewCell {
         do {
             if count! == 0 {
                 addFavoriteTrack()
-                print("\(cell!.trackName), \(cell!.artistName), \(cell!.collectionName) was added")
                 addButtonOutlet.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             } else {
                 let objects = try context.fetch(fetchRequest)
