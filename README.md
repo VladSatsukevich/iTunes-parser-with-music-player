@@ -29,7 +29,7 @@ GitHub client is currently extended with the following libraries. Instructions o
 
 | Library | README | 
 
-- | Alamofire| https://github.com/Alamofire/Alamofire/blob/master/README.md |
+- | Alamofire | https://github.com/Alamofire/Alamofire/blob/master/README.md |
 - | Keychain | https://github.com/evgenyneu/keychain-swift/blob/master/README.md |
 - | SDWebImage | https://github.com/SDWebImage/SDWebImage/blob/master/README.md |
 
@@ -56,7 +56,7 @@ By clicking the like button you form your favorite playlist
 
 ![App Screenshot](https://i.postimg.cc/7ZXqWf2T/Favorite-list-1.png)
 
-You can add any tracks you want to your favorite playlist and to listen to them. They will be sorted alphabetically
+You can add any tracks you want to your favorite playlist and to listen them. They will be sorted alphabetically
 
 ![App Screenshot](https://i.postimg.cc/MTYTqdcd/Favorite-list-2.png)
 
