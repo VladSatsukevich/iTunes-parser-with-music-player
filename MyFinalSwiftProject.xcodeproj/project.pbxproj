@@ -11,8 +11,8 @@
 		5326A78028C8A3E100700575 /* FavoriteTracksPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326A77E28C8A3E100700575 /* FavoriteTracksPlayerViewController.swift */; };
 		5326A78628C8A8AB00700575 /* MusicPlayerController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5326A78428C8A8AB00700575 /* MusicPlayerController.storyboard */; };
 		5326A78728C8A8AB00700575 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326A78528C8A8AB00700575 /* MusicPlayerViewController.swift */; };
-		53553AA328C21533003B37B3 /* timeSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53553AA128C21533003B37B3 /* timeSetup.swift */; };
-		53553AA428C21533003B37B3 /* myStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53553AA228C21533003B37B3 /* myStructs.swift */; };
+		53553AA328C21533003B37B3 /* TImeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53553AA128C21533003B37B3 /* TImeExtensions.swift */; };
+		53553AA428C21533003B37B3 /* ParsingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53553AA228C21533003B37B3 /* ParsingModels.swift */; };
 		53553AA728C2153E003B37B3 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53553AA628C2153E003B37B3 /* Network.swift */; };
 		53553AB028C2155D003B37B3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53553AA928C2155D003B37B3 /* SearchViewController.swift */; };
 		53553AB128C2155D003B37B3 /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53553AAA28C2155D003B37B3 /* SearchViewController.storyboard */; };
@@ -41,8 +41,8 @@
 		5326A77E28C8A3E100700575 /* FavoriteTracksPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTracksPlayerViewController.swift; sourceTree = "<group>"; };
 		5326A78428C8A8AB00700575 /* MusicPlayerController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MusicPlayerController.storyboard; sourceTree = "<group>"; };
 		5326A78528C8A8AB00700575 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
-		53553AA128C21533003B37B3 /* timeSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timeSetup.swift; sourceTree = "<group>"; };
-		53553AA228C21533003B37B3 /* myStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myStructs.swift; sourceTree = "<group>"; };
+		53553AA128C21533003B37B3 /* TImeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TImeExtensions.swift; sourceTree = "<group>"; };
+		53553AA228C21533003B37B3 /* ParsingModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingModels.swift; sourceTree = "<group>"; };
 		53553AA628C2153E003B37B3 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		53553AA928C2155D003B37B3 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		53553AAA28C2155D003B37B3 /* SearchViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
@@ -103,8 +103,7 @@
 		53553AA028C21533003B37B3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				53553AA228C21533003B37B3 /* myStructs.swift */,
-				53553AA128C21533003B37B3 /* timeSetup.swift */,
+				53553AA228C21533003B37B3 /* ParsingModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -152,8 +151,8 @@
 		53553AC128C2157E003B37B3 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				53553AC228C2157E003B37B3 /* FavoriteTracks+CoreDataClass.swift */,
-				53553AC328C2157E003B37B3 /* FavoriteTracks+CoreDataProperties.swift */,
+				539ACE4F28D0666500A1CC05 /* Models */,
+				53553AC928C2170B003B37B3 /* FavoriteTracks.xcdatamodeld */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -180,22 +179,63 @@
 			isa = PBXGroup;
 			children = (
 				53553AA528C2153E003B37B3 /* Alamofire */,
-				53553ABC28C21577003B37B3 /* Cell */,
+				539ACE5028D066C600A1CC05 /* Application */,
 				53553AC128C2157E003B37B3 /* Core Data */,
-				5326A77C28C8A3E100700575 /* FavoritePlayer */,
-				53553AB728C2156D003B37B3 /* FavoriteTracks */,
+				539ACE5228D067DC00A1CC05 /* Extensions */,
+				539ACE4E28D065EE00A1CC05 /* MainTabBar */,
 				53553AA028C21533003B37B3 /* Models */,
-				5326A78328C8A8AB00700575 /* ParserPlayer */,
-				53553AA828C2155D003B37B3 /* Search */,
-				53961C65289B8C980091B7A7 /* AppDelegate.swift */,
-				53961C67289B8C980091B7A7 /* SceneDelegate.swift */,
-				53C9954028C72D3C001C192C /* LaunchScreen.storyboard */,
-				53961C6B289B8C980091B7A7 /* Main.storyboard */,
-				53553AC928C2170B003B37B3 /* FavoriteTracks.xcdatamodeld */,
-				53961C6E289B8C990091B7A7 /* Assets.xcassets */,
-				53961C73289B8C990091B7A7 /* Info.plist */,
+				539ACE5128D0676400A1CC05 /* Resources */,
 			);
 			path = MyFinalSwiftProject;
+			sourceTree = "<group>";
+		};
+		539ACE4E28D065EE00A1CC05 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				53553ABC28C21577003B37B3 /* Cell */,
+				5326A77C28C8A3E100700575 /* FavoritePlayer */,
+				53553AB728C2156D003B37B3 /* FavoriteTracks */,
+				5326A78328C8A8AB00700575 /* ParserPlayer */,
+				53553AA828C2155D003B37B3 /* Search */,
+				53C9954028C72D3C001C192C /* LaunchScreen.storyboard */,
+				53961C6B289B8C980091B7A7 /* Main.storyboard */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		539ACE4F28D0666500A1CC05 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				53553AC228C2157E003B37B3 /* FavoriteTracks+CoreDataClass.swift */,
+				53553AC328C2157E003B37B3 /* FavoriteTracks+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		539ACE5028D066C600A1CC05 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				53961C73289B8C990091B7A7 /* Info.plist */,
+				53961C65289B8C980091B7A7 /* AppDelegate.swift */,
+				53961C67289B8C980091B7A7 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		539ACE5128D0676400A1CC05 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				53961C6E289B8C990091B7A7 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		539ACE5228D067DC00A1CC05 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				53553AA128C21533003B37B3 /* TImeExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B8D7BD9A84E09966D76F98A3 /* Frameworks */ = {
@@ -343,9 +383,9 @@
 				53553AA728C2153E003B37B3 /* Network.swift in Sources */,
 				53553AB428C2155D003B37B3 /* SearchModels.swift in Sources */,
 				5326A78728C8A8AB00700575 /* MusicPlayerViewController.swift in Sources */,
-				53553AA428C21533003B37B3 /* myStructs.swift in Sources */,
+				53553AA428C21533003B37B3 /* ParsingModels.swift in Sources */,
 				53553ABF28C21577003B37B3 /* TrackCell.swift in Sources */,
-				53553AA328C21533003B37B3 /* timeSetup.swift in Sources */,
+				53553AA328C21533003B37B3 /* TImeExtensions.swift in Sources */,
 				53961C66289B8C980091B7A7 /* AppDelegate.swift in Sources */,
 				53553AC528C2157E003B37B3 /* FavoriteTracks+CoreDataProperties.swift in Sources */,
 				53961C68289B8C980091B7A7 /* SceneDelegate.swift in Sources */,
@@ -494,7 +534,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LA7JHQGX5M;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyFinalSwiftProject/Info.plist;
+				INFOPLIST_FILE = MyFinalSwiftProject/Application/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = iTunes;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -525,7 +565,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LA7JHQGX5M;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyFinalSwiftProject/Info.plist;
+				INFOPLIST_FILE = MyFinalSwiftProject/Application/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = iTunes;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
